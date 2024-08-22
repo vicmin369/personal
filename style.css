@@ -78,7 +78,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('https://st4.depositphotos.com/2727515/19619/i/450/depositphotos_196191680-stock-photo-space-amazing-dark-theme-background.jpg') no-repeat;
+    background: var(--bg-color);
     background-size: cover;
     background-position: center;
 }
