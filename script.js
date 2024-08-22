@@ -36,3 +36,27 @@ window.onscroll = () => {
   navbar.classList.remove('active')
 }
 // animation footer on scroll
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Cegah pengiriman formulir biasa
+
+  // Ambil data dari formulir
+  const fullname = document.querySelector('input[placeholder="Fullname"]').value;
+  const email = document.querySelector('input[placeholder="Email Address"]').value;
+  const mobileNumber = document.querySelector('input[placeholder="Mobile Number"]').value;
+  const   
+ mailSubject = document.querySelector('input[placeholder="Mail Subject"]').value;
+  const message = document.querySelector('textarea[placeholder="Your Message"]').value;
+
+  // Buat URL WhatsApp
+  const phoneNumber = "6281234567890"; // Ganti dengan nomor WhatsApp Anda
+  const whatsappMessage = `Formulir Baru:\n\n*Nama:* ${fullname}\n*Email:* ${email}\n*Nomor HP:* ${mobileNumber}\n*Subjek:* ${mailSubject}\n*Pesan:* ${message}`;
+
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  // Redirect pengguna
+  window.location.href = whatsappURL;
+});
